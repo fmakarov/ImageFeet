@@ -43,7 +43,7 @@
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hST-S6-u6D" userLabel="Like btn">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hST-S6-u6D" userLabel="Like Button">
                                                     <rect key="frame" x="335" y="4" width="42" height="42"/>
                                                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                     <state key="normal" image="like_button_on"/>
@@ -65,7 +65,7 @@
                                         <connections>
                                             <outlet property="cellImage" destination="0p8-3v-yzv" id="a33-1g-u2J"/>
                                             <outlet property="dateLabel" destination="uC4-zK-wjf" id="aov-O6-ICq"/>
-                                            <outlet property="likeBtn" destination="hST-S6-u6D" id="99P-jo-Clu"/>
+                                            <outlet property="likeButton" destination="hST-S6-u6D" id="lRX-sL-DeQ"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
