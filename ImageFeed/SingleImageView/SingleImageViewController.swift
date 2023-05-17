@@ -25,7 +25,6 @@ final class SingleImageViewController: UIViewController {
         scrollView.maximumZoomScale = 1.25
         imageView.image = image
         rescaleAndCenterImageInScrollView(image: image)
-        
     }
     
     @IBAction private func didTapBackButton() {
@@ -34,7 +33,7 @@ final class SingleImageViewController: UIViewController {
     
     @IBAction func didTapShareButton(_ sender: Any) {
         let share = UIActivityViewController(
-            activityItems: [image!],
+            activityItems: [image],
             applicationActivities: nil
         )
         present(share, animated: true, completion: nil)
