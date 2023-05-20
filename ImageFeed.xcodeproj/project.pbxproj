@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2E00F2AC2A14425A00606346 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E00F2AB2A14425A00606346 /* Constants.swift */; };
+		2E073FE42A180F50006FB8F3 /* UIBlockingProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E073FE32A180F50006FB8F3 /* UIBlockingProgressHUD.swift */; };
 		2E0F86722A11727800F7FDED /* ImagesListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E0F86712A11727800F7FDED /* ImagesListCell.swift */; };
 		2E0F86772A125F8600F7FDED /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E0F86762A125F8600F7FDED /* ProfileViewController.swift */; };
 		2E0F867C2A12D28900F7FDED /* SingleImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E0F867B2A12D28900F7FDED /* SingleImageViewController.swift */; };
@@ -30,6 +31,7 @@
 
 /* Begin PBXFileReference section */
 		2E00F2AB2A14425A00606346 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		2E073FE32A180F50006FB8F3 /* UIBlockingProgressHUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIBlockingProgressHUD.swift; sourceTree = "<group>"; };
 		2E0F86712A11727800F7FDED /* ImagesListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesListCell.swift; sourceTree = "<group>"; };
 		2E0F86762A125F8600F7FDED /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		2E0F867B2A12D28900F7FDED /* SingleImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleImageViewController.swift; sourceTree = "<group>"; };
@@ -138,6 +140,7 @@
 		2EDFE8DB2A15807D008AEF80 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				2E073FE32A180F50006FB8F3 /* UIBlockingProgressHUD.swift */,
 				2E00F2AB2A14425A00606346 /* Constants.swift */,
 			);
 			path = Models;
@@ -241,6 +244,7 @@
 				2E851C8B29BD86A80076A200 /* ImagesListViewController.swift in Sources */,
 				2E0F86722A11727800F7FDED /* ImagesListCell.swift in Sources */,
 				2E0F86772A125F8600F7FDED /* ProfileViewController.swift in Sources */,
+				2E073FE42A180F50006FB8F3 /* UIBlockingProgressHUD.swift in Sources */,
 				2EDFE8EA2A160C5A008AEF80 /* OAuth2TokenStorage.swift in Sources */,
 				2E851C8729BD86A80076A200 /* AppDelegate.swift in Sources */,
 				2EDFE8E52A160447008AEF80 /* WebViewViewControllerDelegate.swift in Sources */,
