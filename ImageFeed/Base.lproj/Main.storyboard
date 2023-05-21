@@ -133,7 +133,7 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YiO-04-I8y">
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="396" placeholderIntrinsicHeight="396" image="0" translatesAutoresizingMaskIntoConstraints="NO" id="gFi-Ub-hrR">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="396" placeholderIntrinsicHeight="396" image="0" translatesAutoresizingMaskIntoConstraints="NO" id="gFi-Ub-hrR">
                                         <rect key="frame" x="0.0" y="0.0" width="396" height="396"/>
                                     </imageView>
                                 </subviews>
@@ -150,13 +150,13 @@
                                 </connections>
                             </scrollView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gvr-JF-dAO">
-                                <rect key="frame" x="8" y="4" width="48" height="48"/>
+                                <rect key="frame" x="8" y="8" width="48" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="1H8-7B-y5l"/>
                                     <constraint firstAttribute="width" constant="48" id="Dg5-py-c26"/>
                                 </constraints>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" image="Backward"/>
+                                <state key="normal" image="nav_back_button_white"/>
                                 <connections>
                                     <action selector="didTapBackButton" destination="gTj-hP-BXT" eventType="touchUpInside" id="OrC-hA-p0e"/>
                                 </connections>
@@ -173,13 +173,13 @@
                         <viewLayoutGuide key="safeArea" id="zhR-ii-z0R"/>
                         <color key="backgroundColor" red="0.1019607843" green="0.1058823529" blue="0.1333333333" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="YiO-04-I8y" firstAttribute="trailing" secondItem="zhR-ii-z0R" secondAttribute="trailing" id="Gks-9O-P3O"/>
+                            <constraint firstItem="zhR-ii-z0R" firstAttribute="trailing" secondItem="YiO-04-I8y" secondAttribute="trailing" id="Gks-9O-P3O"/>
                             <constraint firstItem="Tor-LP-a63" firstAttribute="centerX" secondItem="zhR-ii-z0R" secondAttribute="centerX" id="U7L-bO-Hbw"/>
                             <constraint firstItem="zhR-ii-z0R" firstAttribute="bottom" secondItem="Tor-LP-a63" secondAttribute="bottom" constant="36" id="VeC-8g-zQa"/>
                             <constraint firstAttribute="bottom" secondItem="YiO-04-I8y" secondAttribute="bottom" id="btW-rg-fDw"/>
                             <constraint firstItem="YiO-04-I8y" firstAttribute="top" secondItem="Xmp-hf-li9" secondAttribute="top" id="erZ-Ag-gMb"/>
                             <constraint firstItem="Gvr-JF-dAO" firstAttribute="leading" secondItem="zhR-ii-z0R" secondAttribute="leading" constant="8" id="n5i-6F-W7o"/>
-                            <constraint firstItem="Gvr-JF-dAO" firstAttribute="top" secondItem="zhR-ii-z0R" secondAttribute="top" constant="4" id="o4p-KR-KIm"/>
+                            <constraint firstItem="Gvr-JF-dAO" firstAttribute="top" secondItem="zhR-ii-z0R" secondAttribute="top" constant="8" id="o4p-KR-KIm"/>
                             <constraint firstItem="YiO-04-I8y" firstAttribute="leading" secondItem="zhR-ii-z0R" secondAttribute="leading" id="oVh-Ys-s3y"/>
                         </constraints>
                     </view>
@@ -343,7 +343,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="splash_screen_logo" translatesAutoresizingMaskIntoConstraints="NO" id="P8I-OR-wfT">
-                                <rect key="frame" x="160.33333333333331" y="388.33333333333331" width="73" height="75"/>
+                                <rect key="frame" x="160" y="388.66666666666669" width="73" height="75"/>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="2Qj-hs-66V"/>
@@ -364,11 +364,11 @@
     </scenes>
     <resources>
         <image name="0" width="200" height="132"/>
-        <image name="Backward" width="32" height="32"/>
         <image name="Sharing" width="50.333332061767578" height="50"/>
         <image name="auth_screen_logo" width="60" height="60"/>
         <image name="like_button_on" width="42" height="42"/>
         <image name="nav_back_button" width="24" height="24"/>
+        <image name="nav_back_button_white" width="32" height="32"/>
         <image name="splash_screen_logo" width="72.666664123535156" height="75.333335876464844"/>
         <image name="tab_editorial_active" width="30" height="30"/>
         <image name="tab_profile_active" width="30" height="30"/>
