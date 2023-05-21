@@ -156,7 +156,7 @@
                                     <constraint firstAttribute="width" constant="48" id="Dg5-py-c26"/>
                                 </constraints>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" image="nav_back_button_white"/>
+                                <state key="normal" image="Backward"/>
                                 <connections>
                                     <action selector="didTapBackButton" destination="gTj-hP-BXT" eventType="touchUpInside" id="OrC-hA-p0e"/>
                                 </connections>
@@ -191,7 +191,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vpn-RV-f0V" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="645" y="417"/>
+            <point key="canvasLocation" x="643.51145038167931" y="416.90140845070425"/>
         </scene>
         <!--Profile View Controller-->
         <scene sceneID="eer-IA-7F4">
@@ -364,11 +364,11 @@
     </scenes>
     <resources>
         <image name="0" width="200" height="132"/>
+        <image name="Backward" width="32" height="32"/>
         <image name="Sharing" width="50.333332061767578" height="50"/>
         <image name="auth_screen_logo" width="60" height="60"/>
         <image name="like_button_on" width="42" height="42"/>
         <image name="nav_back_button" width="24" height="24"/>
-        <image name="nav_back_button_white" width="32" height="32"/>
         <image name="splash_screen_logo" width="72.666664123535156" height="75.333335876464844"/>
         <image name="tab_editorial_active" width="30" height="30"/>
         <image name="tab_profile_active" width="30" height="30"/>
