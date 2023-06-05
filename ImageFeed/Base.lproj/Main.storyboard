@@ -366,14 +366,11 @@
         <image name="0" width="200" height="132"/>
         <image name="Backward" width="32" height="32"/>
         <image name="Sharing" width="50.333332061767578" height="50"/>
-<<<<<<< HEAD
         <image name="auth_screen_logo" width="60" height="60"/>
         <image name="like_button_on" width="42" height="42"/>
         <image name="nav_back_button" width="24" height="24"/>
         <image name="splash_screen_logo" width="72.666664123535156" height="75.333335876464844"/>
-=======
         <image name="like_button_on" width="42" height="42"/>
->>>>>>> sprint_09
         <image name="tab_editorial_active" width="30" height="30"/>
         <image name="tab_profile_active" width="30" height="30"/>
         <namedColor name="LaunchBg">
