@@ -21,13 +21,9 @@ final class OAuth2Service {
             case .success(let body):
                 let authToken = body.accessToken
                 self.authToken = authToken
-                DispatchQueue.main.async {
-                    completion(.success(authToken))
-                }
+                completion(.success(authToken))
             case .failure(let error):
-                DispatchQueue.main.async {
-                    completion(.failure(error))
-                }
+                completion(.failure(error))
             }
         }
         task.resume()
@@ -35,13 +31,13 @@ final class OAuth2Service {
 }
 
 extension OAuth2Service {
-    private func object(for reguest: URLRequest, completion: @escaping (Result<OAuthTokenResponseBody, Error>) -> Void) -> URLSessionTask {
+    private func object(for reguest: URLRequest, comletion: @escaping (Result<OAuthTokenResponseBody, Error>) -> Void) -> URLSessionTask {
         let decoder = JSONDecoder()
         return urlSession.data(for: reguest) { (result: Result<Data, Error>) in
             let response = result.flatMap { data -> Result<OAuthTokenResponseBody, Error> in
                 Result { try decoder.decode(OAuthTokenResponseBody.self, from: data)}
             }
-            completion(response)
+            comletion(response)
         }
     }
 
@@ -74,10 +70,10 @@ extension URLSession {
         case urlSessionError
     }
     
-    func data(for request: URLRequest, completion: @escaping (Result<Data, Error>) -> Void) -> URLSessionTask {
+    func data(for request: URLRequest, comletion: @escaping (Result<Data, Error>) -> Void) -> URLSessionTask {
         let fulfillCompletion: (Result<Data, Error>) -> Void = {result in
             DispatchQueue.main.async {
-                completion(result)
+                comletion(result)
             }
         }
 
