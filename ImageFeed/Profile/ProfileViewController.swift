@@ -59,21 +59,21 @@ final class ProfileViewController: UIViewController {
         ])
         
         
-        let LogoutBtn = UIButton.systemButton(
+        let logoutBtn = UIButton.systemButton(
             with: UIImage(named: "logout")!,
             target: self,
             action: Selector?.none
         )
+        logoutBtn.tintColor = UIColor(named: "LogoutButtonColor")
+        logoutBtn.translatesAutoresizingMaskIntoConstraints = false
         
-        LogoutBtn.tintColor = UIColor(named: "LogoutButtonColor")
-        LogoutBtn.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(logoutBtn)
+        logoutBtn.widthAnchor.constraint(equalToConstant: 24).isActive = true
+        logoutBtn.heightAnchor.constraint(equalToConstant: 24).isActive = true
         
-        view.addSubview(LogoutBtn)
-        LogoutBtn.widthAnchor.constraint(equalToConstant: 24).isActive = true
-        LogoutBtn.heightAnchor.constraint(equalToConstant: 24).isActive = true
-        
-        LogoutBtn.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -16).isActive = true
-        LogoutBtn.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 55).isActive = true
+        logoutBtn.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -16).isActive = true
+        logoutBtn.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 55).isActive = true
     }
+    
     @objc private func didTapButton() {}
 }
