@@ -3,6 +3,7 @@ import UIKit
 final class OAuth2Service {
     static let shared = OAuth2Service()
     private let urlSession = URLSession.shared
+    private let tokenStorage = OAuth2TokenStorage.shared
     private var task: URLSessionTask?
     private var lastCode: String?
 
@@ -56,11 +57,11 @@ extension URLRequest {
     }
 }
 
+private enum NetworkError: Error {
+    case codeError
+}
+
 extension URLSession {
-    enum NetworkError: Error {
-        case codeError
-    }
-        
     func objectTask<T: Decodable>(for request: URLRequest, completion: @escaping (Result<T, Error>) -> Void) -> URLSessionTask {
         let task = dataTask(with: request) { data, response, error in
             DispatchQueue.main.async {
