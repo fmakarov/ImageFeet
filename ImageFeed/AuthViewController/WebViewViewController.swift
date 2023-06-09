@@ -27,7 +27,6 @@ final class WebViewViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         webView.navigationDelegate = self
         
         var urlComponents = URLComponents(string: UnsplashAuthorizeURLString)!

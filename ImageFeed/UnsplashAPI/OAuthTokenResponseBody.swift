@@ -1,5 +1,6 @@
 import UIKit
 
+// MARK: - Decoding
 struct OAuthTokenResponseBody: Decodable {
     let accessToken: String
     let tokenType: String
