@@ -91,7 +91,6 @@ class ProfileViewController: UIViewController {
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
-
 }
 // MARK: - Update Profile data
 extension ProfileViewController {

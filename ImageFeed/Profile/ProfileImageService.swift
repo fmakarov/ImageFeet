@@ -37,7 +37,7 @@ final class ProfileImageService {
              case .success(let decodedObject):
                  let avatarURL = ProfileImage(decodedData: decodedObject)
                  self.avatarURL = avatarURL.profileImage["large"]
-                 completion(.success(self.avatarURL!))
+                 completion(.success(self.avatarURL ?? ""))
                  NotificationCenter.default.post(
                      name: ProfileImageService.DidChangeNotification,
                      object: self,
