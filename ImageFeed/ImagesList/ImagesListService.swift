@@ -80,18 +80,18 @@ extension ImagesListService {
             DispatchQueue.main.async {
                 guard let self = self else { return }
                 switch result {
-                case .success(let photoResults):
-                    for photoResult in photoResults {
-                        self.photos.append(self.convert(photoResult))
-                    }
-                    self.lastLoadedPage = page
-                    NotificationCenter.default
-                        .post(
-                            name: ImagesListService.DidChangeNotification,
-                            object: self,
-                            userInfo: ["Images" : self.photos])
-                case .failure(let error):
-                    assertionFailure("Ошибка получения изображений \(error)")
+                    case .success(let photoResults):
+                        for photoResult in photoResults {
+                            self.photos.append(self.convert(photoResult))
+                        }
+                        self.lastLoadedPage = page
+                        NotificationCenter.default
+                            .post(
+                                name: ImagesListService.DidChangeNotification,
+                                object: self,
+                                userInfo: ["Images" : self.photos])
+                    case .failure(let error):
+                        assertionFailure("Ошибка получения изображений \(error)")
                 }
                 self.task = nil
             }
