@@ -56,8 +56,8 @@ struct ProfileResult: Codable {
 }
 
 struct Profile: Codable {
-    let username, name, loginName: String
-    let bio: String?
+    let username, name: String
+    let loginName, bio: String?
     
     init(decodedData: ProfileResult) {
         self.username = decodedData.username
@@ -65,5 +65,4 @@ struct Profile: Codable {
         self.loginName = "@" + (decodedData.username )
         self.bio = decodedData.bio ?? ""
     }
-
 }
