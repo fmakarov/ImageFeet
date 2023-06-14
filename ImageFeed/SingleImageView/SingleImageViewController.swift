@@ -1,13 +1,13 @@
-//
-//  SingleImageViewController.swift
-//  ImageFeed
-//
-//  Created by paul kellerman on 15.05.2023.
-//
-
 import UIKit
 
 final class SingleImageViewController: UIViewController {
+    var imageURL: URL! {
+        didSet {
+            guard isViewLoaded else {return}
+            setImage()
+        }
+    }
+    
     @IBOutlet private var imageView: UIImageView!
     @IBOutlet private var scrollView: UIScrollView!
 
@@ -23,22 +23,37 @@ final class SingleImageViewController: UIViewController {
         super.viewDidLoad()
         scrollView.minimumZoomScale = 0.1
         scrollView.maximumZoomScale = 1.25
-        imageView.image = image
-        rescaleAndCenterImageInScrollView(image: image)
+        setImage()
+    }
+    
+    private func setImage() {
+        UIBlockingProgressHUD.show()
+        imageView.kf.setImage(with: imageURL) { [weak self] result in
+            guard let self = self else { return }
+            switch result {
+            case .success(let imageResult):
+                self.rescaleAndCenterImageInScrollView(image: imageResult.image)
+            case .failure:
+                self.showAlert()
+            }
+            UIBlockingProgressHUD.dismiss()
+        }
     }
     
     @IBAction private func didTapBackButton() {
         dismiss(animated: true, completion: nil)
     }
     
-    @IBAction private func didTapShareButton(_ sender: Any) {
+    @IBAction private func didTapShareButton(_ sender: UIButton) {
         let share = UIActivityViewController(
-            activityItems: [image],
+            activityItems: [imageView.image as Any],
             applicationActivities: nil
         )
         present(share, animated: true, completion: nil)
     }
-    
+}
+
+extension SingleImageViewController: UIScrollViewDelegate {
     private func rescaleAndCenterImageInScrollView(image: UIImage) {
         let minZoomScale = scrollView.minimumZoomScale
         let maxZoomScale = scrollView.maximumZoomScale
@@ -55,10 +70,28 @@ final class SingleImageViewController: UIViewController {
         let y = (newContentSize.height - visibleRectSize.height) / 2
         scrollView.setContentOffset(CGPoint(x: x, y: y), animated: false)
     }
-}
-
-extension SingleImageViewController: UIScrollViewDelegate {
+    
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {
         imageView
+    }
+    
+    func scrollViewDidZoom(_ scrollView: UIScrollView) {
+        let offsetX = max((scrollView.bounds.width - scrollView.contentSize.width) * 0.5, 0)
+        let offsetY = max((scrollView.bounds.height - scrollView.contentSize.height) * 0.5, 0)
+        scrollView.contentInset = UIEdgeInsets(top: offsetY, left: offsetX, bottom: 0, right: 0)
+    }
+    
+    private func showAlert() {
+        let alert = UIAlertController(
+            title: "Что-то пошло не так(",
+            message: "Попробовать ещё раз?",
+            preferredStyle: .alert
+        )
+        
+        alert.addAction(UIAlertAction(title: "Не надо", style: .default, handler: nil))
+        alert.addAction(UIAlertAction(title: "Повторить", style: .default, handler: { action in
+            self.setImage()
+        }))
+        present(alert, animated: true, completion: nil)
     }
 }

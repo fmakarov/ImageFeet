@@ -7,8 +7,8 @@ class OAuth2TokenStorage {
     private let tokenKey = "BearerToken"
     
     private enum Keys: String {
-            case token
-        }
+        case token
+    }
     
     var token: String? {
         get {
@@ -21,6 +21,10 @@ class OAuth2TokenStorage {
                 keychainStorage.removeObject(forKey: tokenKey)
             }
         }
+    }
+    
+    func clearToken() {
+        keychainStorage.removeAllKeys()
     }
 }
 

@@ -10,6 +10,12 @@ final class ProfileService {
         case codeError
     }
     
+    func clean() {
+        profile = nil
+        task?.cancel()
+        task = nil
+    }
+    
     func fetchProfile(_ token: String, completion: @escaping (Result<Profile, Error>) -> Void) {
         assert(Thread.isMainThread)
         
@@ -38,8 +44,8 @@ final class ProfileService {
 }
 
 struct ProfileResult: Codable {
-    let username, firstName, lastName: String
-    let bio: String?
+    let username, firstName: String
+    let lastName, bio: String?
     
     enum CodingKeys: String, CodingKey {
         case username = "username"
