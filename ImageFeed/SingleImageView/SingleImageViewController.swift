@@ -1,4 +1,5 @@
 import UIKit
+import Kingfisher
 
 final class SingleImageViewController: UIViewController {
     var imageURL: URL! {
@@ -9,14 +10,10 @@ final class SingleImageViewController: UIViewController {
     }
     
     @IBOutlet private var imageView: UIImageView!
-    @IBOutlet private var scrollView: UIScrollView!
-
-    var image: UIImage! {
-        didSet {
-            guard isViewLoaded else { return }
-            imageView.image = image
-            rescaleAndCenterImageInScrollView(image: image)
-        }
+    @IBOutlet private weak var scrollView: UIScrollView!
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
     }
     
     override func viewDidLoad() {
@@ -51,9 +48,7 @@ final class SingleImageViewController: UIViewController {
         )
         present(share, animated: true, completion: nil)
     }
-}
-
-extension SingleImageViewController: UIScrollViewDelegate {
+    
     private func rescaleAndCenterImageInScrollView(image: UIImage) {
         let minZoomScale = scrollView.minimumZoomScale
         let maxZoomScale = scrollView.maximumZoomScale
@@ -70,6 +65,10 @@ extension SingleImageViewController: UIScrollViewDelegate {
         let y = (newContentSize.height - visibleRectSize.height) / 2
         scrollView.setContentOffset(CGPoint(x: x, y: y), animated: false)
     }
+}
+
+extension SingleImageViewController: UIScrollViewDelegate {
+    
     
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {
         imageView
