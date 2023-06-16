@@ -45,20 +45,19 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hST-S6-u6D" userLabel="Like Button">
-                                                    <rect key="frame" x="333" y="4" width="44" height="44"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="44" id="M1t-tg-en1"/>
-                                                        <constraint firstAttribute="width" constant="44" id="OsM-tq-3zr"/>
-                                                    </constraints>
+                                                    <rect key="frame" x="325" y="14" width="42" height="42"/>
                                                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                     <state key="normal" image="like_button_on"/>
+                                                    <connections>
+                                                        <action selector="likeButtonTapped:" destination="irU-AE-dvr" eventType="touchUpInside" id="FeZ-bv-t7y"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="0p8-3v-yzv" firstAttribute="leading" secondItem="5Px-li-4a2" secondAttribute="leading" constant="16" id="Fsp-ln-Ipc"/>
                                                 <constraint firstItem="0p8-3v-yzv" firstAttribute="bottom" secondItem="uC4-zK-wjf" secondAttribute="bottom" constant="8" id="Lja-Bt-yWd"/>
-                                                <constraint firstItem="hST-S6-u6D" firstAttribute="top" secondItem="0p8-3v-yzv" secondAttribute="top" id="V8y-76-zUX"/>
-                                                <constraint firstItem="0p8-3v-yzv" firstAttribute="trailing" secondItem="hST-S6-u6D" secondAttribute="trailing" id="aEX-rO-9W5"/>
+                                                <constraint firstItem="hST-S6-u6D" firstAttribute="top" secondItem="0p8-3v-yzv" secondAttribute="top" constant="10" id="V8y-76-zUX"/>
+                                                <constraint firstItem="0p8-3v-yzv" firstAttribute="trailing" secondItem="hST-S6-u6D" secondAttribute="trailing" constant="10" id="aEX-rO-9W5"/>
                                                 <constraint firstAttribute="bottom" secondItem="0p8-3v-yzv" secondAttribute="bottom" constant="4" id="bp4-ua-e4n"/>
                                                 <constraint firstItem="0p8-3v-yzv" firstAttribute="top" secondItem="5Px-li-4a2" secondAttribute="top" constant="4" id="fi6-km-j64"/>
                                                 <constraint firstItem="uC4-zK-wjf" firstAttribute="leading" secondItem="0p8-3v-yzv" secondAttribute="leading" constant="8" id="hUO-oA-JBm"/>
@@ -98,7 +97,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-779" y="417"/>
+            <point key="canvasLocation" x="-1782" y="518"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="zzw-e8-Tp6">
@@ -116,7 +115,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rdA-6N-b5N" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2747" y="849"/>
+            <point key="canvasLocation" x="-2747" y="518"/>
         </scene>
         <!--Single Image View Controller-->
         <scene sceneID="qqg-jy-e4m">
@@ -187,7 +186,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vpn-RV-f0V" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="643.51145038167931" y="416.90140845070425"/>
+            <point key="canvasLocation" x="-779" y="518"/>
         </scene>
         <!--Auth View Controller-->
         <scene sceneID="OPf-pI-rQ4">

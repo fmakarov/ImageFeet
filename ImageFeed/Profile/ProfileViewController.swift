@@ -86,10 +86,42 @@ class ProfileViewController: UIViewController {
         
     }
     @objc
-    private func didTapButton() {}
+    private func didTapButton() {
+        showLogoutAlert()
+    }
+    
+    private func logout() {
+        storageToken.clearToken()
+        WebViewViewController.clean()
+        cleanServicesData()
+        tabBarController?.dismiss(animated: true)
+        guard let window = UIApplication.shared.windows.first else {
+            fatalError("Invalid Configuration") }
+        window.rootViewController = SplashViewController()
+    }
+    
+    private func showLogoutAlert() {
+        let alert = UIAlertController(
+            title: "Пока, пока!",
+            message: "Уверены, что хотите выйти?",
+            preferredStyle: .alert
+        )
+        alert.addAction(UIAlertAction(title: "Да", style: .default, handler: { [weak self] action in
+            guard let self = self else { return }
+            self.logout()
+        }))
+        alert.addAction(UIAlertAction(title: "Нет", style: .default, handler: nil))
+        present(alert, animated: true, completion: nil)
+    }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
+    }
+    
+    private func cleanServicesData() {
+        ImagesListService.shared.clean()
+        ProfileService.shared.clean()
+        ProfileImageService.shared.clean()
     }
 }
 // MARK: - Update Profile data
